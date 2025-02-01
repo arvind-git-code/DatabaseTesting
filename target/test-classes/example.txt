@@ -16,3 +16,46 @@ BEGIN
   RETURN p_amount * 0.10; -- 10% tax
 END;
 /
+
+
+
+
+
+
+
+
+
+PLSQL anonymous block 
+
+This block of code is called an Anonymous PL/SQL Block.
+
+An anonymous PL/SQL block is a block of code that is executed immediately, without being stored in a database as a named procedure or function. It is called "anonymous" because it does not have a name.
+
+This type of block is typically used for testing, debugging, or executing a one-time task. It can contain variable declarations, executable code, and exception handling, just like a named PL/SQL procedure or function.
+===========================
+
+
+DECLARE
+  quantity NUMBER := 15;
+  price NUMBER := 100.0;
+  discount NUMBER;
+BEGIN
+  discount := calculate_discount(quantity, price);
+  DBMS_OUTPUT.PUT_LINE('Discount: ' || discount);
+END;
+/
+
+
+
+ same if we give name it become function , procedure as below -
+ 
+CREATE OR REPLACE PROCEDURE calculate_and_print_discount
+AS
+  quantity NUMBER := 15;
+  price NUMBER := 100.0;
+  discount NUMBER;
+BEGIN
+  discount := calculate_discount(quantity, price);
+  DBMS_OUTPUT.PUT_LINE('Discount: ' || discount);
+END;
+/

@@ -1,17 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-01T08:38:38 IST" name="Default suite" finished-at="2025-02-01T08:38:40 IST" duration-ms="1316">
+  <suite started-at="2025-02-01T17:55:47 IST" name="Default suite" finished-at="2025-02-01T17:55:48 IST" duration-ms="968">
     <groups>
     </groups>
-    <test started-at="2025-02-01T08:38:38 IST" name="Default test" finished-at="2025-02-01T08:38:40 IST" duration-ms="1316">
-      <class name="dataIntegrity.ForeignKeyConstraint">
-        <test-method signature="testForeignKeyConstraint()[pri:0, instance:dataIntegrity.ForeignKeyConstraint@c730b35]" started-at="2025-02-01T08:38:38 IST" name="testForeignKeyConstraint" finished-at="2025-02-01T08:38:40 IST" duration-ms="1281" status="PASS">
+    <test started-at="2025-02-01T17:55:47 IST" name="Default test" finished-at="2025-02-01T17:55:48 IST" duration-ms="968">
+      <class name="plsql.TriggerTest">
+        <test-method signature="testDeleteTrigger()[pri:0, instance:plsql.TriggerTest@22555ebf]" started-at="2025-02-01T17:55:47 IST" name="testDeleteTrigger" finished-at="2025-02-01T17:55:47 IST" duration-ms="628" status="FAIL">
+          <exception class="java.sql.SQLIntegrityConstraintViolationException">
+            <message>
+              <![CDATA[ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+https://docs.oracle.com/error-help/db/ora-02292/]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.sql.SQLIntegrityConstraintViolationException: ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+https://docs.oracle.com/error-help/db/ora-02292/
+at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:712)
+at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:612)
+at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1364)
+at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:969)
+at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:237)
+at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:516)
+at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:191)
+at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:1400)
+at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:2009)
+at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1622)
+at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:2603)
+at oracle.jdbc.driver.OracleStatement.executeLargeUpdate(OracleStatement.java:2562)
+at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:2547)
+at oracle.jdbc.driver.OracleStatementWrapper.executeUpdate(OracleStatementWrapper.java:325)
+at plsql.TriggerTest.testDeleteTrigger(TriggerTest.java:69)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:829)
+at org.testng.TestRunner.run(TestRunner.java:602)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: Error : 2292, Position : 0, SQL = DELETE FROM departments WHERE department_id = 50, Original SQL = DELETE FROM departments WHERE department_id = 50, Error Message = ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:720)
+... 40 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.sql.SQLIntegrityConstraintViolationException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testForeignKeyConstraint -->
-      </class> <!-- dataIntegrity.ForeignKeyConstraint -->
+        </test-method> <!-- testDeleteTrigger -->
+        <test-method signature="testInsertTrigger()[pri:0, instance:plsql.TriggerTest@22555ebf]" started-at="2025-02-01T17:55:47 IST" name="testInsertTrigger" finished-at="2025-02-01T17:55:48 IST" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInsertTrigger -->
+        <test-method signature="testUpdateTrigger()[pri:0, instance:plsql.TriggerTest@22555ebf]" started-at="2025-02-01T17:55:48 IST" name="testUpdateTrigger" finished-at="2025-02-01T17:55:48 IST" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateTrigger -->
+      </class> <!-- plsql.TriggerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

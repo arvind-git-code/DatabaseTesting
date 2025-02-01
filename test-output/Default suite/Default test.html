@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>2/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Feb 01 08:38:38 IST 2025</td>
+<td>Started on:</td><td>Sat Feb 01 17:55:47 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>1 seconds (1316 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (968 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,117 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='plsql.TriggerTest.testDeleteTrigger()'><b>testDeleteTrigger</b><br>Test class: plsql.TriggerTest</td>
+<td><div><pre>java.sql.SQLIntegrityConstraintViolationException: ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+https://docs.oracle.com/error-help/db/ora-02292/
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:712)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:612)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1364)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:969)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:237)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:516)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:191)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:1400)
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:2009)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1622)
+	at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:2603)
+	at oracle.jdbc.driver.OracleStatement.executeLargeUpdate(OracleStatement.java:2562)
+	at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:2547)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeUpdate(OracleStatementWrapper.java:325)
+	at plsql.TriggerTest.testDeleteTrigger(TriggerTest.java:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: Error : 2292, Position : 0, SQL = DELETE FROM departments WHERE department_id = 50, Original SQL = DELETE FROM departments WHERE department_id = 50, Error Message = ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:720)
+	... 40 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace176955204", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace176955204'><pre>java.sql.SQLIntegrityConstraintViolationException: ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+https://docs.oracle.com/error-help/db/ora-02292/
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:712)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:612)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1364)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:969)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:237)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:516)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:191)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:1400)
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:2009)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1622)
+	at oracle.jdbc.driver.OracleStatement.executeUpdateInternal(OracleStatement.java:2603)
+	at oracle.jdbc.driver.OracleStatement.executeLargeUpdate(OracleStatement.java:2562)
+	at oracle.jdbc.driver.OracleStatement.executeUpdate(OracleStatement.java:2547)
+	at oracle.jdbc.driver.OracleStatementWrapper.executeUpdate(OracleStatementWrapper.java:325)
+	at plsql.TriggerTest.testDeleteTrigger(TriggerTest.java:69)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+Caused by: Error : 2292, Position : 0, SQL = DELETE FROM departments WHERE department_id = 50, Original SQL = DELETE FROM departments WHERE department_id = 50, Error Message = ORA-02292: integrity constraint (DBUSER1.EMP_DEPT_FK) violated - child record found
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:720)
+	... 40 more
+</pre></div></td>
+<td>0</td>
+<td>plsql.TriggerTest@22555ebf</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,10 +187,15 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='dataIntegrity.ForeignKeyConstraint.testForeignKeyConstraint()'><b>testForeignKeyConstraint</b><br>Test class: dataIntegrity.ForeignKeyConstraint</td>
+<td title='plsql.TriggerTest.testUpdateTrigger()'><b>testUpdateTrigger</b><br>Test class: plsql.TriggerTest</td>
 <td></td>
-<td>1</td>
-<td>dataIntegrity.ForeignKeyConstraint@c730b35</td></tr>
+<td>0</td>
+<td>plsql.TriggerTest@22555ebf</td></tr>
+<tr>
+<td title='plsql.TriggerTest.testInsertTrigger()'><b>testInsertTrigger</b><br>Test class: plsql.TriggerTest</td>
+<td></td>
+<td>0</td>
+<td>plsql.TriggerTest@22555ebf</td></tr>
 </table><p>
 </body>
 </html>
